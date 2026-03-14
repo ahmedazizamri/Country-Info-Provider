@@ -12,7 +12,6 @@ const getCountry = function (country) {
   request.addEventListener("load", function () {
     const [data] = JSON.parse(this.responseText);
     console.log(data);
-    const code = data.cioc.toLowerCase();
     const html = `
      <div class="card">
         <div class="flag">
