@@ -1,6 +1,6 @@
 "use strict";
-const cardContainer = document.querySelector(".card-container");
-const addBtn = document.querySelector(".add-card");
+
+const addCardBtn = document.querySelector(".add-card");
 const modal = document.querySelector(".modal");
 const closeBtn = document.querySelector(".close");
 const submitBtn = document.querySelector(".submitCountry");
@@ -31,10 +31,10 @@ const getCountry = function (country) {
         </div>
       </div>
     `;
-    cardContainer.insertAdjacentHTML("afterbegin", html);
+    addCardBtn.insertAdjacentHTML("afterend", html);
   });
 };
-addBtn.addEventListener("click", () => (modal.style.display = "block"));
+addCardBtn.addEventListener("click", () => (modal.style.display = "block"));
 closeBtn.addEventListener("click", () => {
   countryInput.value = "";
   modal.style.display = "none";
