@@ -24,7 +24,11 @@ const getCountry = function (country) {
         <div class="card-description">
           <h2>${data.name.common}</h2>
           <h5>${data.region}</h5>
-          <h5>🧑‍🤝‍🧑 ${(data.population / 1000000).toFixed(2)}M people</h5>
+          <h5>🧑‍🤝‍🧑 ${
+            data.population > 1000000
+              ? (data.population / 1000000).toFixed(2) + "M"
+              : data.population
+          } people</h5>
           <h5>🗣️ ${Object.values(data.languages)[0]}</h5>
           <h5>💰 ${Object.values(data.currencies)[0].name.toUpperCase()} : (${Object.values(data.currencies)[0].symbol})</h5>
         </div>
